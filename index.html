@@ -7,29 +7,35 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
      <link rel="stylesheet" href="src/style.css" />
-    <title>Document</title>
+    <title>Jackson Weather</title>
 </head>
 <body>
   <div class="weather-app">
-        <form>
-            <input type="search" placeholder="Enter a City.." required/>
-            <input type="submit" value="Search" />
+    <header>
+        <form class="search-form">
+            <input type="search" placeholder="Enter a City.." required class="search-form-input"/>
+            <input type="submit" value="Search" class="search-form-button"/>
         </form>
     </header>
         <main>
+            <div class="weather-info">   
             <div>
-            <h1>Cayman Islands</h1> 
-            <p>
+            <h1 class="weather-city">Cayman Islands</h1> 
+
+            <p class="weather-description">
                 Tuesday - 12:00 PM,Sunny
                 <br /> 
-                Humidity: 60%, Wind: 10 mph
-              
+                Humidity: <strong> 60%</strong>, Wind: <strong>10 mph</strong>
             </p>
+          </div>
+          <div class="weather-temp-container "</div>
+                <div class="weather-temp-icon"> ☀️</div> 
+                <div class="weather-temp-value"> 82</div>
+                <div class="weather-temp-unit">°F</div>
+
             </div>
-            <div> 
-            <div> ☀️82°F </div>
             </main>
-               
+                 
     <footer>
 Coded with ❤️ by
 <a href="https://github.com/Bria345/">
@@ -39,4 +45,5 @@ Briana Jackson</a>, is <a href="https://github.com/Bria345/JacksonWF">open-sourc
 </div>
     <header>
 </body>
-</html>
+</html> 
+ 
