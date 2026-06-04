@@ -1,8 +1,11 @@
 body {
     background-color: #f0f0f0;
     font-family: 'Montserrat', sans-serif;  
-}
 
+}
+strong {
+    color: #007BFF;
+}
 a {
     
     color: #007BFF;
@@ -27,7 +30,7 @@ a {
     background-color: #f0f0f0;
     border: none;
     border-radius: 6px;
-    width: 80%;
+    width: 70%;
     padding: 15px 20px;
     font-size: 16px;
 }
@@ -63,28 +66,38 @@ a {
     color: #007BFF;
 }
 .weather-temperature {
-    font-size: 32px;
+    font-size: 80px;
     font-weight: bold;
+    margin-left: 10px;
+    line-height: 80px;
 }
 
 .weather-temp-container {
     display: flex;
+    align-items: center;
     
 }
 
 .weather-temp-icon {
-    font-size: 44px;
-    margin-top: 22px;
+    width: 80px;
+    height: 80px;
+    display: block;
 }
+    #icon {
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+}
+
 .weather-temp-value {
-    font-size: 80px;
+    font-size: 65px;
     font-weight: bold;
-        margin-left: 10px;
+    margin-left: 6px;
 }
 .weather-temp-unit {
     font-size: 28px;
     color: #555;
-    margin-top: 20px;
+   
 }
 
 main{

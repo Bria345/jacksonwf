@@ -10,7 +10,7 @@
 <body>
   <div class="weather-app">
     <header>
-        <form class="search-form" id="search-form">
+        <form id="search-form">
             <input type="search" placeholder="Enter a City.." required id="search-form-input" class="search-form-input"/>
             <input type="submit" value="Search" class="search-form-button"/>
         </form>
@@ -18,24 +18,24 @@
     <main>
         <div class="weather-info">   
           <div>
-            <h1 class="weather-city" id="city">Cayman Islands</h1> 
-            <p class="weather-description">
-                <span id="time"></span>, <span id="description">clear sky</span>
+            <h1 id="city">--</h1> 
+            <p>
+                <span id="time"></span>, <span id="description">--</span>
                 <br /> 
-                Humidity: <strong id="humidity">60%</strong>, Wind: <strong id="wind">10 mph</strong>
+                Humidity: <strong id="humidity">--</strong>, Wind: <strong id="wind">--</strong>
             </p>
           </div>
           <div class="weather-temp-container">
-                <div class="weather-temp-icon">☀️</div> 
-                <div class="weather-temp-value" id="temperature">--</div>
-                <div class="weather-temp-unit">°F</div>
+            <div id="icon"></div>
+            <div id="temperature" class="weather-temp-value">--</div>
+            <div class="weather-temp-unit">°F</div>
           </div>
         </div>
     </main>
     <footer>
-        Coded with ❤️ by <a href="https://github.com">Briana Jackson</a>, 
+       Coded with ❤️ by <a href="https://github.com">Briana Jackson</a>, 
         is <a href="https://github.com/JacksonWF">open-sourced on GitHub</a> and 
-        <a href="https://netlify.app">hosted on Netlify</a>.    
+        <a href="https://netlify.app">hosted on Netlify</a>.
     </footer>
   </div>
   <script src="src/index.js"></script>
