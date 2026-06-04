@@ -3,12 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-     <link rel="stylesheet" href="src/style.css" />
-     <script src="https://cdn.jsdelivr.net/npm/axios@1.13.2/dist/axios.min.js"></script>
     <title>Jackson Weather</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/style.css" /> 
 </head>
 <body>
   <div class="weather-app">
@@ -18,33 +15,29 @@
             <input type="submit" value="Search" class="search-form-button"/>
         </form>
     </header>
-        <main>
-            <div class="weather-info">   
-            <div>
-            <h1 class="weather-city" id="weather-city">Cayman Islands</h1> 
-
+    <main>
+        <div class="weather-info">   
+          <div>
+            <h1 class="weather-city" id="city">Cayman Islands</h1> 
             <p class="weather-description">
-                Tuesday - 12:00 PM,Sunny
+                <span id="time"></span>, <span id="description">clear sky</span>
                 <br /> 
-                Humidity: <strong> 60%</strong>, Wind: <strong>10 mph</strong>
+                Humidity: <strong id="humidity">60%</strong>, Wind: <strong id="wind">10 mph</strong>
             </p>
           </div>
-          <div class="weather-temp-container "</div>
-                <div class="weather-temp-icon"> ☀️</div> 
-                <div class="weather-temp-value"> 82</div>
+          <div class="weather-temp-container">
+                <div class="weather-temp-icon">☀️</div> 
+                <div class="weather-temp-value" id="temperature">--</div>
                 <div class="weather-temp-unit">°F</div>
-
-            </div>
-            </main>
-                 
+          </div>
+        </div>
+    </main>
     <footer>
-Coded with ❤️ by
-<a href="https://github.com/Bria345/">
-Briana Jackson</a>, is <a href="https://github.com/Bria345/JacksonWF">open-sourced on GitHub</a> and 
-<a href="https://jacksonwf.netlify.app/"> hosted on Netlify</a>.    
-   </footer>
-</div>
-<script src="src/index.js"></script>
+        Coded with ❤️ by <a href="https://github.com">Briana Jackson</a>, 
+        is <a href="https://github.com/JacksonWF">open-sourced on GitHub</a> and 
+        <a href="https://netlify.app">hosted on Netlify</a>.    
+    </footer>
+  </div>
+  <script src="src/index.js"></script>
 </body>
-</html> 
- 
+</html>
