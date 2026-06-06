@@ -41,6 +41,8 @@ function displayWeatherCondition(response) {
   if (iconElement) {
     iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-temp-icon"/>`;
   }
+ getForecast(response.data.city);
+
 }
 
 function searchCity(city) {
@@ -55,7 +57,15 @@ function handleSearchFormSubmit(event) {
   searchCity(searchInput.value);
 }
 
-function displayForecast() {
+function getForecast (city) {
+let apiKey = "t3fabb4446203472a1b4b853oa5d0c30";
+let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=imperial`;
+axios.get(apiUrl).then(displayForecast);
+
+
+}
+
+function displayForecast(response) {
   let forecast = document.querySelector("#forecast");
   if (!forecast) return;
 
@@ -87,6 +97,7 @@ if (searchFormElement) {
 
 
 searchCity("Cayman Islands");
+getForecast("Cayman Islands");
 displayForecast(); 
 
 
