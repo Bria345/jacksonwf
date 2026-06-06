@@ -26,22 +26,21 @@ function displayWeatherCondition(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let timeElement = document.querySelector("#time");
-  let iconElement = document.querySelector("#icon"); // Target the icon div
+  let iconElement = document.querySelector("#icon");
 
-  // 1. Change the Text Data
+
   if (cityElement) { cityElement.innerHTML = response.data.city; }
   if (descriptionElement) { descriptionElement.innerHTML = response.data.condition.description; }
   if (temperatureElement) { temperatureElement.innerHTML = Math.round(response.data.temperature.current); }
   if (humidityElement) { humidityElement.innerHTML = `${response.data.temperature.humidity}%`; }
   if (windElement) { windElement.innerHTML = `${Math.round(response.data.wind.speed)} mph`; }
-  
-  // 2. Change the Time
+
   let date = new Date(response.data.time * 1000);
   if (timeElement) { timeElement.innerHTML = formatDate(date); }
 
-  // 3. THE FIX: Change the Icon
-  // This line takes the dynamic URL from the API and puts it into an image tag
-  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-temp-icon"/>`;
+  if (iconElement) {
+    iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-temp-icon"/>`;
+  }
 }
 
 function searchCity(city) {
@@ -56,9 +55,39 @@ function handleSearchFormSubmit(event) {
   searchCity(searchInput.value);
 }
 
+function displayForecast() {
+  let forecast = document.querySelector("#forecast");
+  if (!forecast) return;
+
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHtml = ""; 
+
+  days.forEach(function (day) {
+   
+    forecastHtml +=
+      ` <div class="weather-forecast-day">
+        <div class="weather-forecast-date">${day}</div>
+        <div class="weather-forecast-icon">🌤️</div>
+        <div class="weather-forecast-temps">
+          <div class="weather-forecast-temp"><strong>78°</strong></div>
+          <div class="weather-forecast-temp">75°</div>
+        </div>
+      </div>
+    `;
+  });
+
+  
+  forecast.innerHTML = forecastHtml; 
+}
+
 let searchFormElement = document.querySelector("#search-form");
 if (searchFormElement) {
   searchFormElement.addEventListener("submit", handleSearchFormSubmit);
 }
 
+
 searchCity("Cayman Islands");
+displayForecast(); 
+
+
+ 
